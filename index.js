@@ -212,39 +212,78 @@ console.log("connection working....")
 //     }
 // })
 
-const people = [
-  "Chris",
-  "Anne",
-  "Colin",
-  "Terri",
-  "Phil",
-  "Lola",
-  "Sam",
-  "Kay",
-  "Bruce",
-];
+// const people = [
+//   "Chris",
+//   "Anne",
+//   "Colin",
+//   "Terri",
+//   "Phil",
+//   "Lola",
+//   "Sam",
+//   "Kay",
+//   "Bruce",
+// ];
 
-const refusedGuest = document.createElement("p");
-const acceptedGuest = document.createElement("p");
+// const refusedGuest = document.createElement("p");
+// const acceptedGuest = document.createElement("p");
 
-refusedGuest.textContent = `Refused Guest: `
-acceptedGuest.textContent = `Accepted Guest: `
+// refusedGuest.textContent = `Refused Guest: `
+// acceptedGuest.textContent = `Accepted Guest: `
 
-document.body.appendChild(refusedGuest)
-document.body.appendChild(acceptedGuest)
+// document.body.appendChild(refusedGuest)
+// document.body.appendChild(acceptedGuest)
 
-for (let i = 0; i < people.length; i++) {
-    if ((people[i].toLowerCase() === 'chris') || (people[i].toLowerCase() === 'anne')) {
-        refusedGuest.textContent += `${people[i]},`
-    } else {
-        acceptedGuest.textContent += `${people[i]},`
-    } 
+// for (let i = 0; i < people.length; i++) {
+//     if ((people[i].toLowerCase() === 'chris') || (people[i].toLowerCase() === 'anne')) {
+//         refusedGuest.textContent += `${people[i]},`
+//     } else {
+//         acceptedGuest.textContent += `${people[i]},`
+//     } 
+// }
+
+
+// for (let i = 0; i < 3; i++) {
+//     inner : for (let j = 3; j < 6; j++) {
+//         if (j === 5) {break inner}
+//         console.log(j)
+//     }
+
+//     console.log(i)
+
+// }
+
+
+// for (let i = 0; i <= 10; i++) {
+//     if (i%2==0) {
+//         console.log(i)
+//     }
+// }
+
+// let i = 0;
+// while ( i <= 0) {
+//     if (i%2==0) {
+//         console.log(i)
+//     }
+// }
+
+// creating prime number function
+
+
+function findingPrimeNumber() {
+    let number = 20;
+    let primeNumberArray = []
+    outer: for (let i = 2; i <= number; i++) {
+        for (let j = 2; j < i; j++) {
+            if (i % j == 0) {
+                continue outer
+            }
+        }
+        primeNumberArray.push(i)
+    }
+    return primeNumberArray
 }
 
-
-
-
-
+console.log(findingPrimeNumber(20))
 
 
 
