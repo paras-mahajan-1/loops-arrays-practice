@@ -269,27 +269,171 @@ console.log("connection working....")
 // creating prime number function
 
 
-function findingPrimeNumber() {
-    let number = 20;
-    let primeNumberArray = []
-    outer: for (let i = 2; i <= number; i++) {
-        for (let j = 2; j < i; j++) {
-            if (i % j == 0) {
-                continue outer
-            }
-        }
-        primeNumberArray.push(i)
-    }
-    return primeNumberArray
-}
+// function findingPrimeNumber() {
+//     let number = 20;
+//     let primeNumberArray = []
+//     outer: for (let i = 2; i <= number; i++) {
+//         for (let j = 2; j < i; j++) {
+//             if (i % j == 0) {
+//                 continue outer
+//             }
+//         }
+//         primeNumberArray.push(i)
+//     }
+//     return primeNumberArray
+// }
 
-console.log(findingPrimeNumber(20))
-
-
+// console.log(findingPrimeNumber(20))
 
 
+//  camelize the string 
+//  for example:- "background-color" == "backgroundColor";
 
+// function camelize(string) {
+//     let arr = string.split("-");
+//     let newArr = []
+//     for (let i = 1; i < arr.length; i++) {
+//         let firstLetter = arr[i].slice(0,1).toUpperCase();
+//         let remainingLetters = arr[i].slice(1);
+//         let final = firstLetter+remainingLetters;
+//         newArr.push(final)
+//     }
+//     newArr.unshift(arr[0]);
+//     let result = newArr.join("");
+//     return result
+// }
 
+// function testingString() {
+//     let arr = ["background-color", "list-style-image", "-webkit-transition"];
+//     let checkArr = ["backgroundColor", "listStyleImage", "WebkitTransition"];
+//     for (let i  = 0; i < arr.length; i++) {
+//         if (camelize(arr[i]) === checkArr[i]) {
+//             console.log(`${camelize(arr[i])} and this is correct`)
+//         } else { console.log(`${("try again!")} and ${(camelize(arr[i]))}`)}
+//     }
+// }
 
+// testingString()
 
+// function camelize(str) {
+//     return str
+//     .split("-")
+//     .map(
+//         (word, index) => index == 0 ? word : word[0].toUpperCase() + word.slice(1)
+//     ).join("")
 
+// }
+// console.log(camelize("-webkit-transition"))
+
+// Filter range;
+
+// function filterRange(arr, a, b) {
+//     let counterArray = []
+//     for (let number of arr) {
+//         if ((number >= a) && (number <= b)){
+//             counterArray.push(number)
+//         }
+//     }
+//     return counterArray
+// }
+
+// function filterRange(arr, a, b) {
+//     return arr.filter(item => {
+//         return ((a <= item) && (item <= b))
+//     })
+// }
+
+// console.log(filterRange([5, 3, 8, 1], 1, 4))
+
+// function filterRangeInPlace(arr, a, b) {
+//     for (let i = 0; i < arr.length; i++) {
+//         if ((arr[i] >= a) && (arr[i] <= b)) continue
+//         else {
+//             let targetIndex = arr.indexOf(arr[i]);
+//             arr.splice(targetIndex, 1, "a")
+//         }
+//     }
+//     while (arr.includes("a")) {
+//         let targetIndex = arr.indexOf("a");
+//         arr.splice(targetIndex, 1)
+//     }
+//     return arr
+// }
+
+// console.log(filterRangeInPlace([5, 3, 8, 1], 1, 4))
+
+// function filterRangeInPlace(arr, a, b) {
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] < a || arr[i] > b) {
+//             arr.splice(i, 1);
+//             i--;
+//         }
+//     }
+// }
+// let arr = [5, 3, 8, 1]
+// filterRangeInPlace(arr, 1, 4)
+// alert(arr)
+
+// sort in descending order
+
+// let arr = [5, 2, 1, -10, 8];
+
+// function sortInDescendingOrder(a, b) {
+//     if (a>b) return -1;
+//     if (a==b) return 0;
+//     if (a<b) return 1;
+// }
+// arr.sort(sortInDescendingOrder)
+// // arr.sort((a, b) => b-a)
+// alert(arr)
+
+// copy and sort array
+
+// let arr = ["HTML", "JavaScript", "CSS"];
+// function copySorted(arr) {
+//     let newArray = arr.slice();
+//     newArray.sort((a,b) => {
+//         if (a>b) return 1;
+//         if (a==b) return 0;
+//         if (a<b) return -1;
+//     });
+//     return newArray
+// }
+// console.log(copySorted(arr));
+// console.log(arr)
+
+// Shuffle an array
+// I'll be using Fisher Yates algorithm
+
+// let arr = [1, 2, 3];
+
+// function shuffle(arr) {
+
+//     for (let i = 0 ; i < arr.length; i++) {
+//         let randomIndex = Math.floor(Math.random(i)*(i+1));
+
+//         [arr[randomIndex], arr[i]] = [arr[i], arr[randomIndex]];
+//     }
+
+// }
+
+// shuffle(arr);
+// console.log(arr);
+
+// filter unique array members
+
+// function unique(strings) {
+//     let counterArray = [];
+//     for (let i = 0; i < strings.length; i++ ){
+//         if (!counterArray.includes(strings[i])) {
+//             counterArray.push(strings[i])
+//         }
+//     }
+//     return counterArray
+// }
+
+// let strings = ["Hare", "Krishna", "Hare", "Krishna",
+//   "Krishna", "Krishna", "Hare", "Hare", ":-O"
+// ];
+
+// console.log(unique(strings))
